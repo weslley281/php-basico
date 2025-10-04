@@ -1,0 +1,18 @@
+{
+    "name": "weslley/php-basico",
+    "description": "Curso de PHP da pinguin academy",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Weslley\\PhpBasico\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Weslley H V Ferraz",
+            "email": "weslleyhenrique800@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
