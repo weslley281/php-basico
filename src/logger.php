@@ -8,14 +8,20 @@ use Monolog\Handler\StreamHandler;
 
 class Logger
 {
-    public function __construct(
-        protected \Monolog\Logger $logger
-    ){
+    protected \Monolog\Logger $logger;
+    
+    public function __construct(){
+        $this->logger = new \Monolog\Logger('app');
         $this->logger->pushHandler(new StreamHandler(__DIR__ . '/../logs/app.log', \Monolog\Level::Warning));
     }
 
     public static function log(string $message): void
     {
         echo "[LOG]: " . $message . PHP_EOL;
+    }
+
+    public function write(string $message): void
+    {
+        $this->logger->debug($message);
     }
 }
