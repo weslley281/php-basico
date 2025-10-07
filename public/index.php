@@ -5,6 +5,9 @@ declare(strict_types=1);
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Weslley\PhpBasico\Gretings;
+use Weslley\PhpBasico\Logger;
 
 $gretings = new Gretings();
 echo $gretings->sayHello('Weslley') . PHP_EOL;
+
+(new Logger())->write('This is a log message.');
