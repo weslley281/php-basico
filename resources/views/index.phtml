@@ -1,0 +1,23 @@
+
+<?php
+    $title = "Produtos de Sacanagem";
+    include __DIR__ . '/include/head.phtml';
+?>
+    <header>
+        <h1>Produtos de Sacanagem</h1>
+    </header>
+    <main>
+        <section class="product-list">
+            <?php foreach ($products as $product): ?>
+                <div class="product-card">
+                    <h2 class="product-name"><?= htmlspecialchars($product['name']) ?></h2>
+                    <p class="product-description"><?= htmlspecialchars($product['description']) ?></p>
+                    <p class="product-price">R$ <?= number_format($product['price'], 2, ',', '.') ?></p>
+                    <p class="product-availability <?= $product['isAvailable'] ? 'available' : 'unavailable' ?>">
+                        <?= $product['isAvailable'] ? 'Disponível' : 'Indisponível' ?>
+                    </p>
+                </div>
+            <?php endforeach; ?>
+        </section>
+    </main>
+<?php include __DIR__ . '/include/footer.phtml'; ?>
