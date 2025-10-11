@@ -47,7 +47,7 @@ class Product
                 "isAvailable" => false,
             ],
             [
-                "name" => "Venda",
+                "name" => "Venda para os Olhos Vermelha",
                 "price" => 15.00,
                 "description" => "Venda de Cetim para os Olhos",
                 "isAvailable" => true,
