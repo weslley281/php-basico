@@ -1,20 +1,23 @@
-
 <?php
-    $title = "Produtos de Sacanagem";
-    include __DIR__ . '/include/head.phtml';
+$title = "Produtos de Sacanagem";
+include __DIR__ . '/include/head.phtml';
 ?>
-    <main>
-        <section class="product-list">
-            <?php foreach ($products as $product): ?>
-                <div class="product-card">
-                    <h2 class="product-name"><?= htmlspecialchars($product['name']) ?></h2>
-                    <p class="product-description"><?= htmlspecialchars($product['description']) ?></p>
-                    <p class="product-price">R$ <?= number_format($product['price'], 2, ',', '.') ?></p>
-                    <p class="product-availability <?= $product['isAvailable'] ? 'available' : 'unavailable' ?>">
-                        <?= $product['isAvailable'] ? 'Disponível' : 'Indisponível' ?>
-                    </p>
+<main class="container py-4">
+    <section class="row">
+        <?php foreach ($products as $product): ?>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm border-primary">
+                    <div class="card-body">
+                        <h2 class="card-title text-primary"><?= htmlspecialchars($product['name']) ?></h2>
+                        <p class="card-text"><?= htmlspecialchars($product['description']) ?></p>
+                        <p class="h5 text-danger font-weight-bold">R$ <?= number_format($product['price'], 2, ',', '.') ?></p>
+                        <span class="badge <?= $product['isAvailable'] ? 'badge-success' : 'badge-danger' ?>">
+                            <?= $product['isAvailable'] ? 'Disponível' : 'Indisponível' ?>
+                        </span>
+                    </div>
                 </div>
-            <?php endforeach; ?>
-        </section>
-    </main>
+            </div>
+        <?php endforeach; ?>
+    </section>
+</main>
 <?php include __DIR__ . '/include/footer.phtml'; ?>
