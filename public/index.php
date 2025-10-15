@@ -8,6 +8,10 @@ use Weslley\PhpBasico\Models\Product;
 
 $products = Product::getAll();
 
+$title = 'Home';
+
 require_once __DIR__ . '/../resources/views/index.phtml';
+
+
 ?>
 

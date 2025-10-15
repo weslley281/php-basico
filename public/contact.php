@@ -8,8 +8,8 @@ use Weslley\PhpBasico\Models\Product;
 
 $products = Product::getAll();
 
-$title = 'Produtos';
+$title = 'Contato';
 
-require_once __DIR__ . '/../resources/views/index.phtml';
+require_once __DIR__ . '/../resources/views/contact.phtml';
 ?>
 
