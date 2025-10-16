@@ -6,14 +6,16 @@ include __DIR__ . '/include/head.phtml';
         <?php foreach ($products as $product): ?>
             <div class="col-md-4 mb-4">
                 <div class="card shadow-sm border-primary">
-                    <div class="card-body">
-                        <h2 class="card-title text-primary"><?= htmlspecialchars($product['name']) ?></h2>
-                        <p class="card-text"><?= htmlspecialchars($product['description']) ?></p>
-                        <p class="h5 text-danger font-weight-bold">R$ <?= number_format($product['price'], 2, ',', '.') ?></p>
-                        <span class="badge <?= $product['isAvailable'] ? 'badge-success' : 'badge-danger' ?>">
-                            <?= $product['isAvailable'] ? 'Disponível' : 'Indisponível' ?>
-                        </span>
-                    </div>
+                    <a href="/product.php?id=<?= $product["id"] ?>" target="_blank" rel="noopener noreferrer">
+                        <div class="card-body">
+                            <h2 class="card-title text-primary"><?= htmlspecialchars($product['name']) ?></h2>
+                            <p class="card-text"><?= htmlspecialchars($product['description']) ?></p>
+                            <p class="h5 text-danger font-weight-bold">R$ <?= number_format($product['price'], 2, ',', '.') ?></p>
+                            <span class="badge <?= $product['isAvailable'] ? 'badge-success' : 'badge-danger' ?>">
+                                <?= $product['isAvailable'] ? 'Disponível' : 'Indisponível' ?>
+                            </span>
+                        </div>
+                    </a>
                 </div>
             </div>
         <?php endforeach; ?>

@@ -1,0 +1,30 @@
+<?php
+include __DIR__ . '/include/head.phtml';
+?>
+<main class="container py-4">
+    <section class="row">
+        <div class="col-12">
+            <h1 class="mb-4">Detalhes do Produto</h1>
+            <?php if ($product): ?>
+                <div class="card shadow-sm border-primary">
+                    <div class="card-body">
+                        <h2 class="card-title text-primary"><?= htmlspecialchars($product['name']) ?></h2>
+                        <p class="card-text"><?= htmlspecialchars($product['description']) ?></p>
+                        <p class="h5 text-danger font-weight-bold">R$ <?= number_format($product['price'], 2, ',', '.') ?></p>
+                        <span class="badge <?= $product['isAvailable'] ? 'badge-success' : 'badge-danger' ?>">
+                            <?= $product['isAvailable'] ? 'Disponível' : 'Indisponível' ?>
+                        </span>
+                    </div>
+                </div>
+            <?php else: ?>
+                <div class="alert alert-warning" role="alert">
+                    Produto não encontrado.
+                </div>
+            <?php endif; ?>
+            <a href="/index.php" class="btn btn-secondary mt-4">Voltar à Lista de Produtos</a>
+        </div>
+    </section>
+</main>
+<?php
+include __DIR__ . '/include/foot.phtml';
+?>

@@ -6,10 +6,10 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use Weslley\PhpBasico\Models\Product;
 
-$products = Product::getAll();
-
 $title = 'Produtos';
+$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+$product = $id ? Product::findById($id) : null;
 
-require_once __DIR__ . '/../resources/views/index.phtml';
+require_once __DIR__ . '/../resources/views/product.phtml';
 ?>
 
